@@ -8,7 +8,7 @@ They make you happy ;)
 
 ## How to use
 Copy the folders to\
-<AndroidStudioRoot>/plugins/android/lib/templates/other\  
+\<AndroidStudioRoot\>/plugins/android/lib/templates/other\  
   
 ## Notes
 When updating Android-Studio it will complain about those files, so its better
