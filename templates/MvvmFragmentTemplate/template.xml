@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<template format="4"
+        revision="1"
+        name="MVVM Fragment Template"
+        description="Creates full MVVM Fragment files">
+ 
+    <category value="Other"/>
+ 
+    <parameter id="className"
+        name="Name"
+        type="string"
+        constraints="class|unique|nonempty"
+        default="Foobar"
+        help="Give it a name of what the view will display"/>
+
+		<parameter
+        id="generateLayout"
+        name="Generate Layout File"
+        type="boolean"
+        default="true"
+        help="If true, a layout file will be generated" />
+
+    <parameter
+        id="layoutName"
+        name="Layout Name"
+        type="string"
+        constraints="layout|unique|nonempty"
+        suggest="fragment_${classToResource(className)}"
+        default="fragment_mvp"
+        visibility="generateLayout"
+        help="The name of the layout to create for the fragment" />
+ 
+    <globals file="globals.xml.ftl" />
+    <execute file="recipe.xml.ftl" />
+ 
+</template>

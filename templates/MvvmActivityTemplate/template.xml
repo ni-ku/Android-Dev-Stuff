@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<template format="4"
+        revision="1"
+        name="MVVM Activity Template"
+        description="Creates full MVVM Activity files">
+ 
+    <category value="Other"/>
+ 
+    <parameter id="className"
+        name="Name"
+        type="string"
+        constraints="class|unique|nonempty"
+        default="Foobar"
+        help="Give it a name of what the view will display"/>
+
+		<parameter
+        id="generateLayout"
+        name="Generate Layout File"
+        type="boolean"
+        default="true"
+        help="If true, a layout file will be generated" />
+
+    <parameter
+        id="layoutName"
+        name="Layout Name"
+        type="string"
+        constraints="layout|unique|nonempty"
+        suggest="${activityToLayout(className)}"
+        default="activity_main"
+        visibility="generateLayout"
+        help="The name of the layout to create for the activity" />
+ 
+    <globals file="globals.xml.ftl" />
+    <execute file="recipe.xml.ftl" />
+ 
+</template>
